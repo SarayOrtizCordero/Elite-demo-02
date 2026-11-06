@@ -26,6 +26,7 @@
   burger.addEventListener("click",function(){menu(mnav.hidden)});
   mnav.addEventListener("click",function(e){if(e.target.closest("a")) menu(false)});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!mnav.hidden){menu(false);burger.focus()}});
+  document.addEventListener("click",function(e){if(!mnav.hidden&&!mnav.contains(e.target)&&!burger.contains(e.target)) menu(false)});
   window.addEventListener("resize",function(){if(innerWidth>900&&!mnav.hidden) menu(false)});
 
   // Formulario de contacto (demo, sin servidor)
